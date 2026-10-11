@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>For the love of tech</title>
+        <meta charset="UTF-8">
+        </head>
+        <body>
+            <h1>Tech Giants Who Shaped The World</h1>
+            <p></p>
+            <div class = "flexcontainer">
+                <div class = "musk">
+                    <h2>Name: Elon Musk</h2>
+                    <h3>Age:55 </h3>
+                    <h3>Companies: Tesla, SpaceX, Neuralink, The Boring Company, xAI, Twitter/X, SolarCity, Zip2, X.com/PayPal, and OpenAI. </h3>
+                    <h3>Networth: 1.08 Trillion</h3>
+                    <h3>Contribution: Elon Musk has advanced humanity through innovations in space exploration, renewable energy, AI, transportation, and philanthropy, aiming to improve life on Earth and beyond. <br></h3>
+                </div>
+                <div class = "Huang">
+                    <h2>Name: Jensen Huang </h2>
+                    <h3>Age: 63 </h3>
+                    <h3>Companies:NVIDIA (also associated with OpenAI ,Anthropic etc) </h3>
+                    <h3>Networth: 200 Billion USD</h3>
+                    <h3>Contribution: Jensen Huang’s greatest contribution to the world is building NVIDIA’s GPU‑accelerated computing platform, which transformed gaming, scientific research, and the modern artificial intelligence revolution </h3>
+                </div>
+                <div class = "zuck">
+                    <h2>Name: Mark Zuckerberg</h2>
+                    <h3>Age: 42</h3>
+                    <h3>Companies:Facebook, Instagram, WhatsApp, Messenger, Threads, Meta Quest, and Reality Labs </h3>
+                    <h3>Networth: 237 Billion </h3>
+                    <h3>Contribution:Mark Zuckerberg’s most significant contributions are the creation of Facebook, the transformation of global digital communication, and large‑scale philanthropic investments in science, education, and public health. </h3>
+                </div>
+                <div class = "jobs"> 
+                    <h2>Name:Steve Jobs </h2>
+                    <h3>Age:(Died 2011(56)) </h3>
+                    <h3>Companies:Apple, NeXT,Pixar, The Walt Disney Company </h3>
+                    <h3>Networth: 10.2 Billion</h3>
+                    <h3>Contribution:Steve Jobs’ greatest contribution was transforming multiple industries—computing, music, phones, animation, and digital media—through simple, human‑centered technology that reshaped how billions of people live and work. </h3>
+                </div>
+            </div>
+        </body>
+        <style>
+            body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f2fe, #fdf2f8);
+}
+
+.flexcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.musk, .Huang, .zuck, .jobs {
+  border: 2px solid #333;
+  border-radius: 16px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.musk:hover, .Huang:hover, .zuck:hover, .jobs:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .flexcontainer {
+    grid-template-columns: 1fr;
+  }
+}
+        </style>
+    </html>
