@@ -1,75 +1,120 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>For the love of tech</title>
-        <meta charset="UTF-8">
-        </head>
-        <body>
-            <h1>Tech Giants Who Shaped The World</h1>
-            <p></p>
-            <div class = "flexcontainer">
-                <div class = "musk">
-                    <h2>Name: Elon Musk</h2>
-                    <h3>Age:55 </h3>
-                    <h3>Companies: Tesla, SpaceX, Neuralink, The Boring Company, xAI, Twitter/X, SolarCity, Zip2, X.com/PayPal, and OpenAI. </h3>
-                    <h3>Networth: 1.08 Trillion</h3>
-                    <h3>Contribution: Elon Musk has advanced humanity through innovations in space exploration, renewable energy, AI, transportation, and philanthropy, aiming to improve life on Earth and beyond. <br></h3>
-                </div>
-                <div class = "Huang">
-                    <h2>Name: Jensen Huang </h2>
-                    <h3>Age: 63 </h3>
-                    <h3>Companies:NVIDIA (also associated with OpenAI ,Anthropic etc) </h3>
-                    <h3>Networth: 200 Billion USD</h3>
-                    <h3>Contribution: Jensen Huang’s greatest contribution to the world is building NVIDIA’s GPU‑accelerated computing platform, which transformed gaming, scientific research, and the modern artificial intelligence revolution </h3>
-                </div>
-                <div class = "zuck">
-                    <h2>Name: Mark Zuckerberg</h2>
-                    <h3>Age: 42</h3>
-                    <h3>Companies:Facebook, Instagram, WhatsApp, Messenger, Threads, Meta Quest, and Reality Labs </h3>
-                    <h3>Networth: 237 Billion </h3>
-                    <h3>Contribution:Mark Zuckerberg’s most significant contributions are the creation of Facebook, the transformation of global digital communication, and large‑scale philanthropic investments in science, education, and public health. </h3>
-                </div>
-                <div class = "jobs"> 
-                    <h2>Name:Steve Jobs </h2>
-                    <h3>Age:(Died 2011(56)) </h3>
-                    <h3>Companies:Apple, NeXT,Pixar, The Walt Disney Company </h3>
-                    <h3>Networth: 10.2 Billion</h3>
-                    <h3>Contribution:Steve Jobs’ greatest contribution was transforming multiple industries—computing, music, phones, animation, and digital media—through simple, human‑centered technology that reshaped how billions of people live and work. </h3>
-                </div>
-            </div>
-        </body>
-        <style>
-            body {
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"">
+<title>Tech Pioneers</title>
+<style>
+body {
+  font: 16px Arial, sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #e0f2fe, #fdf2f8);
+  background: #f3f4f6;
+  color: #222;
 }
-
-.flexcontainer {
+header {
+  background: #172554;
+  color: white;
+  padding: 24px;
+}
+main {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 0 14px;
+}
+input, select {
+  padding: 11px;
+  margin: 4px 4px 12px 0;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+article {
+  background: white;
+  padding: 16px;
+  border-radius: 7px;
+  border: 1px solid #ddd;
+}
+h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+small {
+  color: #555;
+}
+p {
+  line-height: 1.45;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tech Pioneers</h1>
+  <p>People whose ideas changed technology.</p>
+</header>
+
+<main>
+  <input id="q" placeholder="Search people or ideas" aria-label="Search people or ideas">
+
+  <select id="cat" aria-label="Filter by field">
+    <option>All fields</option>
+    <option>AI</option>
+    <option>Space</option>
+    <option>Social media</option>
+    <option>Computing</option>
+  </select>
+
+  <section id="list">
+    <article data-c="Space">
+      <h2>Elon Musk</h2>
+      <small>Space and electric vehicles</small>
+      <p>Leads work at SpaceX and Tesla, advancing reusable rockets and electric cars.</p>
+    </article>
+
+<article data-c="AI">
+  <h2>Jensen Huang</h2>
+  <small>AI and computing</small>
+  <p>Co-founded NVIDIA, whose chips power graphics, scientific computing and many AI systems.</p>
+</article>
+
+<article data-c="Social media">
+  <h2>Mark Zuckerberg</h2>
+  <small>Social media</small>
+  <p>Co-founded Facebook, helping shape how people communicate and share information online.</p>
+</article>
+
+<article data-c="Computing">
+  <h2>Steve Jobs</h2>
+  <small>Computing and design</small>
+  <p>Co-founded Apple and helped bring personal computers, music players and smartphones to wider audiences.</p>
+</article>
+
+  </section>
+</main>
+
+<script>
+const q = document.getElementById("q");
+const cat = document.getElementById("cat");
+const cards = document.querySelectorAll("article");
+
+function show() {
+  cards.forEach(card => {
+    const matchesText = card.innerText.toLowerCase().includes(q.value.toLowerCase());
+    const matchesCategory = cat.value === "All fields" ||
+      card.dataset.c === cat.value;
+
+    card.hidden = !(matchesText && matchesCategory);
+  });
 }
 
-.musk, .Huang, .zuck, .jobs {
-  border: 2px solid #333;
-  border-radius: 16px;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+q.addEventListener("input", show);
+cat.addEventListener("change", show);
+</script>
 
-.musk:hover, .Huang:hover, .zuck:hover, .jobs:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-@media (max-width: 768px) {
-  .flexcontainer {
-    grid-template-columns: 1fr;
-  }
-}
-        </style>
-    </html>
+</body>
+</html>
